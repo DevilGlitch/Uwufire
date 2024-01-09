@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/Mobile/</title>
+    <title>Alt Display</title>
     <style>
         body {
             font-family: 'Courier New', monospace;
@@ -12,35 +12,49 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
-        .terminal {
-            border: 1px solid #ccc;
-            padding: 10px;
-            max-width: 800px;
-            margin: 0 auto;
-            white-space: pre-line;
+        .prompt {
+            color: lime;
+            display: inline-block;
+            min-width: 60px;
+        }
+
+        .input {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .output {
+            margin-top: 10px;
         }
 
         @media (max-width: 600px) {
             /* Adjust styles for smaller screens */
-            .terminal {
-                max-width: 100%;
-                padding: 5px;
+            .prompt, .input {
+                display: block;
+                min-width: 0;
+                margin-left: 0;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="terminal">
-    <p>Welcome to Alt Display!</p>
-    <p>$ ls</p>
-    <p>README.md   index.html   styles.css</p>
-    <p>$ cat README.md</p>
-    <p>This is a simple Alt Display website.</p>
-    <p>Feel free to customize it based on your needs.</p>
-    <p>$ exit</p>
+<div class="output">
+    <div class="prompt">$</div>
+    <div class="input">Welcome to Alt Display!</div>
+</div>
+
+<div class="output">
+    <div class="prompt">$</div>
+    <div class="input">dir</div>
+</div>
+
+<div class="output">
+    <div class="prompt">$</div>
+    <div class="input">echo Hello, world!</div>
 </div>
 
 </body>
